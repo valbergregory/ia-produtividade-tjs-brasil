@@ -1,0 +1,37 @@
+g_A_any,n,definicao,g_B_prod,g_C_any_full,g_D_prod_full
+0,1,A - uso operacional,NA,NA,NA
+2018,3,A - uso operacional,NA,NA,NA
+2019,11,A - uso operacional,NA,NA,NA
+2020,3,A - uso operacional,NA,NA,NA
+2021,1,A - uso operacional,NA,NA,NA
+2022,4,A - uso operacional,NA,NA,NA
+2023,1,A - uso operacional,NA,NA,NA
+2024,2,A - uso operacional,NA,NA,NA
+2025,1,A - uso operacional,NA,NA,NA
+NA,1,B - produção,0,NA,NA
+NA,3,B - produção,2018,NA,NA
+NA,10,B - produção,2019,NA,NA
+NA,2,B - produção,2020,NA,NA
+NA,1,B - produção,2021,NA,NA
+NA,3,B - produção,2022,NA,NA
+NA,1,B - produção,2023,NA,NA
+NA,1,B - produção,2024,NA,NA
+NA,1,B - produção,2025,NA,NA
+NA,4,B - produção,NA,NA,NA
+NA,2,C - ano completo uso,NA,0,NA
+NA,3,C - ano completo uso,NA,2019,NA
+NA,11,C - ano completo uso,NA,2020,NA
+NA,3,C - ano completo uso,NA,2021,NA
+NA,1,C - ano completo uso,NA,2022,NA
+NA,4,C - ano completo uso,NA,2023,NA
+NA,1,C - ano completo uso,NA,2024,NA
+NA,2,C - ano completo uso,NA,2025,NA
+NA,2,D - ano completo produção,NA,NA,0
+NA,3,D - ano completo produção,NA,NA,2019
+NA,10,D - ano completo produção,NA,NA,2020
+NA,2,D - ano completo produção,NA,NA,2021
+NA,1,D - ano completo produção,NA,NA,2022
+NA,3,D - ano completo produção,NA,NA,2023
+NA,1,D - ano completo produção,NA,NA,2024
+NA,1,D - ano completo produção,NA,NA,2025
+NA,4,D - ano completo produção,NA,NA,NA

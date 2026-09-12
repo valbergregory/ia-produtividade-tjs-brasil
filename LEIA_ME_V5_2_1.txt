@@ -1,0 +1,18 @@
+PATCH V5.2.1
+
+O erro anterior era de FORMATAÇÃO/EXPORTAÇÃO do stargazer, não necessariamente
+do wild bootstrap.
+
+Faça:
+1. Não rode a V5 inteira.
+2. Copie 06_PATCH_WILD_BOOTSTRAP_V5_2_1.R para a raiz do projeto V5.
+3. Execute com Source.
+4. Aguarde as 9.999 replicações.
+5. O final esperado:
+   WILD BOOTSTRAP V5.2.1 CONCLUÍDO
+
+Envie:
+- outputs/audit/wild_cluster_v5_2_1.csv
+- outputs/audit/inferencia_poucos_clusters_v5_2_1.csv
+
+Este patch NÃO usa stargazer.

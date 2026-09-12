@@ -1,0 +1,4 @@
+CRONOLOGIA V10 APLICADA E MODELOS REESTIMADOS
+Data/hora: 2026-08-09 22:05:37.459158
+Correções principais: TJAC/TJAL/TJAM/TJAP/TJCE -> primeira adoção em 2019.
+TJES permanece com datação 2020 marcada como incerta e deve ser objeto de sensibilidade.

@@ -1,0 +1,2 @@
+Metodo,Estimativa,Estatistica,p_valor,IC_inf,IC_sup,Replicacoes,Clusters
+Wild cluster bootstrap,0.016128378155417344,0.40939677854732376,0.6678667866786678,NA,NA,9999,27

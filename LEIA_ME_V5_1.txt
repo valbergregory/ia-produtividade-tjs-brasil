@@ -1,0 +1,14 @@
+ANPEC V5.1 — CORREÇÃO DO INSTALADOR
+
+1. Se o 00_INSTALAR_PACOTES_V5.R ainda estiver rodando, clique em STOP.
+2. NÃO apague a pasta V5.
+3. Copie 00_INSTALAR_PACOTES_V5_1_RAPIDO.R para a raiz da V5.
+4. Rode esse arquivo com Source.
+5. Aguarde:
+   INSTALAÇÃO RÁPIDA V5.1 CONCLUÍDA
+6. Session > Restart R.
+7. Continue com:
+   01_VERIFICAR_V5.R
+   02_PREPARAR_DADOS_V5.R
+   03_BASELINE_V5.R
+   04_ROBUSTEZ_AVANCADA_V5.R

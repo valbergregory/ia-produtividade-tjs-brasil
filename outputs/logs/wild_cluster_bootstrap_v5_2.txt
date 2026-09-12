@@ -1,0 +1,4 @@
+boottest.lm(object = lm_pref, param = "ai_any_lag1", B = 9999, 
+    clustid = "tribunal", conf_int = TRUE, type = "rademacher", 
+    engine = "R-lean")
+ 

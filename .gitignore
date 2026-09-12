@@ -1,0 +1,28 @@
+# Biblioteca local de pacotes (recriada por 00_INSTALAR_PACOTES_V5.R)
+R_libs/
+
+# Sessão do RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Pacotes e cópias
+*.zip
+*.rar
+*.bak
+
+# --- Texto do artigo (local; nao versionado). Publicar apenas o PDF final em artigo/ ---
+overleaf/
+article/
+anpec/
+paper*/
+outputs/overleaf/
+*.tex
+*.bib
+*.pdf
+*.docx
+*.qmd
+CLAUDE.md
+.claude/
+!artigo/*.pdf

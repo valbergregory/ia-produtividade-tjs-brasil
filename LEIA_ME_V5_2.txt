@@ -1,0 +1,16 @@
+V5.2 — PATCH FINAL DO WILD CLUSTER BOOTSTRAP
+
+1. NÃO reexecute a V5 inteira.
+2. Copie `06_PATCH_WILD_BOOTSTRAP_V5_2.R` para a raiz da pasta V5.
+3. Abra o arquivo no RStudio.
+4. Clique em Source.
+5. Aguarde 9.999 replicações.
+6. O final esperado é:
+   WILD BOOTSTRAP V5.2 CONCLUÍDO
+7. Envie:
+   outputs/audit/wild_cluster_v5_2.csv
+   outputs/audit/inferencia_poucos_clusters_v5_2.csv
+
+O patch usa uma regressão lm algebraicamente equivalente ao TWFE preferido
+com dummies de tribunal e ano. Essa forma evita problemas de interface entre
+objetos fixest serializados e fwildclusterboot.

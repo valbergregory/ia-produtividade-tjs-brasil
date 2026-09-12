@@ -1,0 +1,23 @@
+V10 — PATCH DE REESTIMAÇÃO DA CRONOLOGIA OFICIAL
+
+IMPORTANTE: a auditoria funcional encontrou datas oficiais anteriores às usadas na V5.
+
+Faça:
+1. Abra a pasta do projeto V5 que funcionou.
+2. Copie para a RAIZ:
+   - 07_REESTIMAR_CRONOLOGIA_OFICIAL_V10.R
+   - ia_adocao_validada_v10.csv
+3. Garanta que 06_PATCH_WILD_BOOTSTRAP_V5_2_1.R também esteja na raiz.
+4. Abra 07_REESTIMAR_CRONOLOGIA_OFICIAL_V10.R e clique em Source.
+5. O script:
+   - faz backup da cronologia antiga;
+   - substitui pela V10;
+   - roda 02_PREPARAR_DADOS_V5.R;
+   - roda 03_BASELINE_V5.R;
+   - roda 04_ROBUSTEZ_AVANCADA_V5.R;
+   - reexecuta o wild bootstrap, se localizar o patch.
+6. Aguarde:
+   REESTIMAÇÃO V10 CONCLUÍDA
+7. Envie ZIP de outputs/ e data/processed/.
+
+Não use os números V5 como finais antes dessa reestimação.

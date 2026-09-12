@@ -1,0 +1,475 @@
+ANPEC V5 - RUN ALL
+Início: 2026-08-09 19:26:41.99904 
+
+
+============================================================
+EXECUTANDO: 01_VERIFICAR_V5.R 
+============================================================
+
+============================================================
+ANPEC V5 - VERIFICAÇÃO
+============================================================
+Working directory: D:/R - Projetos/Anpec - 2026 - Artigo/anpec_area5_pipeline_v5_robustez 
+
+Justiça em Números      Cronologia IA         Preparação           Baseline 
+              TRUE               TRUE               TRUE               TRUE 
+ Robustez avançada 
+              TRUE 
+
+Pacotes:
+  tidyverse            2.0.0
+  fixest               0.14.2
+  did                  2.5.1
+  stargazer            5.2.3
+  broom                1.0.13
+  digest               0.6.39
+  didimputation        0.5.1
+  clubSandwich         0.7.0
+  fwildclusterboot     0.14.3
+
+============================================================
+V5 PRONTA PARA EXECUÇÃO
+Rode 02_PREPARAR_DADOS_V5.R
+============================================================
+
+============================================================
+EXECUTANDO: 02_PREPARAR_DADOS_V5.R 
+============================================================
+indexing ia_adocao_validada.csv [===================================] 382.48MB/s, eta:  0s                                                                                          wrote 660.00B in  0s, 60.18MB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        wrote 19.64kB in  0s, 2.15GB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+============================================================
+PREPARAÇÃO V5 CONCLUÍDA
+Painel: 459 observações; 27 TJs.
+Arquivo: data/processed/painel_anpec_v5.csv
+============================================================
+
+============================================================
+EXECUTANDO: 03_BASELINE_V5.R 
+============================================================
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Efeito da IA sobre produtividade: comparação de controles} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Modelo & Beta\_IA & EP & p & Efeito\_pct \\ 
+\hline \\[-1.8ex] 
+Legado: razões & -0.000616572715876287 & 0.0395739180671043 & 0.987688181988675 & -0.0616382673979565 \\ 
+Preferido: componentes & 0.014499814208198 & 0.038420664307921 & 0.708942305669266 & 1.4605446446007 \\ 
+Preferido + magistrados & 0.013512151332577 & 0.0382128002367951 & 0.726487855787995 & 1.36038530128939 \\ 
+Robustez: controles tecnológicos & 0.0111016714409115 & 0.0379115406269767 & 0.771975757380146 & 1.11635236711054 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{IA e indicadores alternativos de desempenho judicial} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Outcome & Beta\_IA & EP & p & Efeito\_pct \\ 
+\hline \\[-1.8ex] 
+Log(IPM) & 0.014499814208198 & 0.038420664307921 & 0.708942305669266 & 1.4605446446007 \\ 
+Log(IPSJud) & 0.0285108809239308 & 0.0300579976234859 & 0.351594000590251 & 2.89212063869924 \\ 
+IAD & 0.0456814026260731 & 0.0366654479245228 & 0.223912253200644 & NA \\ 
+Congestionamento & 0.00177293675353209 & 0.0130773843338531 & 0.893203251590048 & NA \\ 
+Congestionamento líquido & 0.0045770042225309 & 0.0132290885164845 & 0.732141546284282 & NA \\ 
+IPC-Jus & -0.0130244819999043 & 0.0254558316939615 & 0.613214200652537 & NA \\ 
+Log(Processos baixados) & 0.0199188571796829 & 0.032480910372269 & 0.545040143179471 & 2.01185613712269 \\ 
+Log(Baixados/magistrado) & 0.0129769261997054 & 0.0368310936558053 & 0.727426225210255 & 1.30614919115795 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Callaway-Sant'Anna: efeito médio da adoção de IA} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ATT & SE & IC95\_inf & IC95\_sup & Efeito\_pct \\ 
+\hline \\[-1.8ex] 
+-0.0375835074749592 & 0.0797721103381952 & -0.193936843737822 & 0.118769828787903 & -3.6886012854573 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+============================================================
+BASELINE V5 CONCLUÍDO
+Modelos preservados + controles corrigidos + C&S prontos.
+Agora rode 04_ROBUSTEZ_AVANCADA_V5.R
+============================================================
+
+============================================================
+EXECUTANDO: 04_ROBUSTEZ_AVANCADA_V5.R 
+============================================================
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          
+[V5] Estimando BJS / didimputation...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Borusyak-Jaravel-Spiess: estimador de imputação} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+term & estimate & std.error & conf.low & conf.high \\ 
+\hline \\[-1.8ex] 
+treat & $0.0031$ & $0.0633$ & $$-$0.1209$ & $0.1271$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] Wild cluster bootstrap...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        [V5] CR2 / Satterthwaite...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Inferência com poucos clusters} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Metodo & Estimativa & EP & p\_valor & IC\_inf & IC\_sup \\ 
+\hline \\[-1.8ex] 
+CR1 cluster TJ & 0.014499814208198 & 0.038420664307921 & 0.708942305669266 & -0.0608046878353271 & 0.0898043162517231 \\ 
+CR2 Satterthwaite & NA & 0.0389593693877037 & 0.713399589598789 & NA & NA \\ 
+Wild cluster bootstrap & NA & NA & NA & NA & NA \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] Sensibilidade ao timing A/B/C/D...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Sensibilidade à definição temporal da adoção de IA} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Definicao & ATT & SE & IC95\_inf & IC95\_sup & Efeito\_pct & N\_TJs & Status \\ 
+\hline \\[-1.8ex] 
+A - primeiro uso operacional & 0.0189154190247356 & 0.0640309677699509 & -0.106585277804368 & 0.144416115853839 & 1.90954488850765 & 27 & OK \\ 
+B - primeira produção confirmada & 0.104958942329543 & 0.0677234713222678 & -0.0277790614621019 & 0.237696946121188 & 11.066500810166 & 22 & OK \\ 
+C - primeiro ano completo após uso (principal) & -0.0375835074749592 & 0.0683594250814698 & -0.17156798063464 & 0.0964009656847216 & -3.6886012854573 & 27 & OK \\ 
+D - primeiro ano completo após produção & 0.0447732503561621 & 0.0664694704357732 & -0.0855069116979534 & 0.175053412410278 & 4.57907003529767 & 22 & OK \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] Leave-one-TJ-out (27 reestimações)...
+wrote 1.37kB in  0s, 97.46MB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        indexing callaway_santanna_principal_v5.csv [========================] 22.98MB/s, eta:  0s                                                                                          
+\begin{table}[!htbp] \centering 
+  \caption{Resumo do leave-one-TJ-out} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+N\_estimacoes & Media & Mediana & Min & Max & DP \\ 
+\hline \\[-1.8ex] 
+27 & -0.0375777556794279 & -0.0353623325734579 & -0.0842325706497474 & 0.00656750838320697 & 0.0169532275512076 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] MDE / poder aproximado...
+indexing callaway_santanna_principal_v5.csv [========================] 13.68MB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Poder estatístico e efeitos mínimos detectáveis} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Estimador & Beta & SE & MDE\_log\_80pct & MDE\_pct\_80pct & IC95\_inf\_log & IC95\_sup\_log & IC95\_inf\_pct & IC95\_sup\_pct \\ 
+\hline \\[-1.8ex] 
+TWFE preferido & 0.014499814208198 & 0.038420664307921 & 0.107577860062179 & 11.3577560589373 & -0.0608046878353271 & 0.0898043162517231 & -5.89929880545691 & 9.39601925278719 \\ 
+Callaway-Sant'Anna & -0.0375835074749592 & 0.0797721103381952 & 0.223361908946946 & 25.0272976843125 & -0.193936843737822 & 0.118769828787903 & -17.6290074934174 & 12.6110690193558 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+============================================================
+ROBUSTEZ AVANÇADA V5 CONCLUÍDA
+============================================================
+# A tibble: 7 × 2
+  Bloco                  Status                               
+  <chr>                  <chr>                                
+1 BJS                    OK                                   
+2 Wild cluster bootstrap não estimado                         
+3 CR2                    OK                                   
+4 Timing A/B/C/D         OK                                   
+5 Leave-one-TJ-out       OK                                   
+6 MDE/poder              OK                                   
+7 Sun-Abraham            sunab não exportado por fixest 0.14.2
+
+Confira outputs/audit/STATUS_ROBUSTEZ_V5.csv
+============================================================
+
+============================================================
+PIPELINE V5 CONCLUÍDO
+Fim: 2026-08-09 19:26:47.814637 
+============================================================
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          
+============================================================
+V5.2 - WILD CLUSTER BOOTSTRAP
+============================================================
+Observações: 324 
+Clusters: 27 
+Rodando 9.999 replicações wild cluster bootstrap...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        indexing inferencia_poucos_clusters_v5.csv [=========================] 20.35MB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Inferência com poucos clusters} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Metodo & Estimativa & EP & p\_valor & IC\_inf & IC\_sup \\ 
+\hline \\[-1.8ex] 
+CR1 cluster TJ & 0.014499814208198 & 0.038420664307921 & 0.708942305669266 & -0.0608046878353271 & 0.0898043162517231 \\ 
+CR2 Satterthwaite & NA & 0.0389593693877037 & 0.713399589598789 & NA & NA \\ 
+Wild cluster bootstrap & 0.0144998142081977 & NA & 0.706670667066707 & NA & NA \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          
+============================================================
+V5.2 - WILD CLUSTER BOOTSTRAP
+============================================================
+Observações: 324 
+Clusters: 27 
+Rodando 9.999 replicações wild cluster bootstrap...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        indexing inferencia_poucos_clusters_v5.csv [=========================] 43.96MB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Inferência com poucos clusters} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Metodo & Estimativa & EP & p\_valor & IC\_inf & IC\_sup \\ 
+\hline \\[-1.8ex] 
+CR1 cluster TJ & 0.014499814208198 & 0.038420664307921 & 0.708942305669266 & -0.0608046878353271 & 0.0898043162517231 \\ 
+CR2 Satterthwaite & NA & 0.0389593693877037 & 0.713399589598789 & NA & NA \\ 
+Wild cluster bootstrap & 0.0144998142081977 & NA & 0.706670667066707 & NA & NA \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          
+============================================================
+V5.2.1 - WILD CLUSTER BOOTSTRAP
+============================================================
+N = 324 
+Clusters = 27 
+
+Rodando 9.999 replicações...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        indexing inferencia_poucos_clusters_v5.csv [=========================] 33.30MB/s, eta:  0s                                                                                          indexing cr2_satterthwaite_v5.csv [==================================] 19.83MB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+RESULTADO WILD:
+# A tibble: 1 × 8
+  Metodo                 Estimativa Estatistica p_valor IC_inf IC_sup Replicacoes Clusters
+  <chr>                       <dbl>       <dbl>   <dbl>  <dbl>  <dbl>       <int>    <int>
+1 Wild cluster bootstrap     0.0145       0.361   0.707     NA     NA        9999       27
+
+COMPARAÇÃO FINAL:
+# A tibble: 3 × 6
+  Metodo                 Estimativa      EP p_valor  IC_inf  IC_sup
+  <chr>                       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+1 CR1 cluster TJ             0.0145  0.0384   0.709 -0.0608  0.0898
+2 CR2 Satterthwaite          0.0145  0.0390   0.713 -0.0664  0.0954
+3 Wild cluster bootstrap     0.0145 NA        0.707 NA      NA     
+
+============================================================
+WILD BOOTSTRAP V5.2.1 CONCLUÍDO
+============================================================
+Envie somente:
+1. outputs/audit/wild_cluster_v5_2_1.csv
+2. outputs/audit/inferencia_poucos_clusters_v5_2_1.csv
+============================================================
+[1] TRUE
+indexing ia_adocao_validada.csv [===================================] 574.56MB/s, eta:  0s                                                                                          wrote 662.00B in  0s, 50.48MB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        wrote 19.82kB in  0s, 2.15GB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+============================================================
+PREPARAÇÃO V5 CONCLUÍDA
+Painel: 459 observações; 27 TJs.
+Arquivo: data/processed/painel_anpec_v5.csv
+============================================================
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Efeito da IA sobre produtividade: comparação de controles} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Modelo & Beta\_IA & EP & p & Efeito\_pct \\ 
+\hline \\[-1.8ex] 
+Legado: razões & -0.000125766673753906 & 0.0407696522787114 & 0.997562228288871 & -0.0125758765457284 \\ 
+Preferido: componentes & 0.016128378155419 & 0.037696017687195 & 0.67228086289988 & 1.62591425061374 \\ 
+Preferido + magistrados & 0.0153801844323484 & 0.0375584666715667 & 0.685527080688418 & 1.54990681715812 \\ 
+Robustez: controles tecnológicos & 0.0155468409530191 & 0.0365751634686776 & 0.674286290726061 & 1.56683218162472 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{IA e indicadores alternativos de desempenho judicial} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Outcome & Beta\_IA & EP & p & Efeito\_pct \\ 
+\hline \\[-1.8ex] 
+Log(IPM) & 0.016128378155419 & 0.037696017687195 & 0.67228086289988 & 1.62591425061374 \\ 
+Log(IPSJud) & 0.0188492158267768 & 0.0322462080245681 & 0.563895057760076 & 1.90279837405638 \\ 
+IAD & 0.023148686470984 & 0.0379115801235916 & 0.546767589276999 & NA \\ 
+Congestionamento & 0.0105947729248797 & 0.0127611124972062 & 0.413962492638268 & NA \\ 
+Congestionamento líquido & 0.00930999524413769 & 0.0135726186950941 & 0.498822773761257 & NA \\ 
+IPC-Jus & -0.0222213382877547 & 0.0300124705106373 & 0.465689373591602 & NA \\ 
+Log(Processos baixados) & 0.0167086304179683 & 0.0342224822740918 & 0.6294754656637 & 1.68490002895196 \\ 
+Log(Baixados/magistrado) & 0.0173768668843746 & 0.0364394140771269 & 0.637438389765447 & 1.75287229547842 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Callaway-Sant'Anna: efeito médio da adoção de IA} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ATT & SE & IC95\_inf & IC95\_sup & Efeito\_pct \\ 
+\hline \\[-1.8ex] 
+0.0379047149227732 & 0.076310250972043 & -0.111663376982431 & 0.187472806827977 & 3.86322620080535 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+============================================================
+BASELINE V5 CONCLUÍDO
+Modelos preservados + controles corrigidos + C&S prontos.
+Agora rode 04_ROBUSTEZ_AVANCADA_V5.R
+============================================================
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          
+[V5] Estimando BJS / didimputation...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Borusyak-Jaravel-Spiess: estimador de imputação} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+term & estimate & std.error & conf.low & conf.high \\ 
+\hline \\[-1.8ex] 
+treat & $0.0015$ & $0.0707$ & $$-$0.1371$ & $0.1402$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] Wild cluster bootstrap...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        [V5] CR2 / Satterthwaite...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Inferência com poucos clusters} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Metodo & Estimativa & EP & p\_valor & IC\_inf & IC\_sup \\ 
+\hline \\[-1.8ex] 
+CR1 cluster TJ & 0.016128378155419 & 0.037696017687195 & 0.67228086289988 & -0.0577558165114832 & 0.0900125728223212 \\ 
+CR2 Satterthwaite & NA & 0.0382120206561327 & 0.67765272675912 & NA & NA \\ 
+Wild cluster bootstrap & NA & NA & NA & NA & NA \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] Sensibilidade ao timing A/B/C/D...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Sensibilidade à definição temporal da adoção de IA} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Definicao & ATT & SE & IC95\_inf & IC95\_sup & Efeito\_pct & N\_TJs & Status \\ 
+\hline \\[-1.8ex] 
+A - primeiro uso operacional & -0.023980137840657 & 0.0963029318013333 & -0.21273388417127 & 0.164773608489956 & -2.36948989071829 & 27 & OK \\ 
+B - primeira produção confirmada & 0.065396924448519 & 0.0669354615565743 & -0.0657965802023666 & 0.196590429099405 & 6.75826899674801 & 23 & OK \\ 
+C - primeiro ano completo após uso (principal) & 0.0379047149227732 & 0.0778674505494601 & -0.114715488154169 & 0.190524917999715 & 3.86322620080535 & 27 & OK \\ 
+D - primeiro ano completo após produção & 0.082914322967965 & 0.0776578298853599 & -0.0692950236073403 & 0.23512366954327 & 8.6448720858695 & 23 & OK \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] Leave-one-TJ-out (27 reestimações)...
+wrote 1.33kB in  0s, 132.82MB/s                                                                                        wrote 2.15GB in  0s, 2.15GB/s                                                                                        indexing callaway_santanna_principal_v5.csv [========================] 17.16MB/s, eta:  0s                                                                                          
+\begin{table}[!htbp] \centering 
+  \caption{Resumo do leave-one-TJ-out} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+N\_estimacoes & Media & Mediana & Min & Max & DP \\ 
+\hline \\[-1.8ex] 
+27 & 0.0379141218086549 & 0.040958959845043 & -0.0202846739125789 & 0.0894348836685324 & 0.0190064800561485 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+[V5] MDE / poder aproximado...
+indexing callaway_santanna_principal_v5.csv [========================] 12.31MB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+\begin{table}[!htbp] \centering 
+  \caption{Poder estatístico e efeitos mínimos detectáveis} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Estimador & Beta & SE & MDE\_log\_80pct & MDE\_pct\_80pct & IC95\_inf\_log & IC95\_sup\_log & IC95\_inf\_pct & IC95\_sup\_pct \\ 
+\hline \\[-1.8ex] 
+TWFE preferido & 0.016128378155419 & 0.037696017687195 & 0.105548849524146 & 11.1320390669173 & -0.0577558165114832 & 0.0900125728223212 & -5.61196006919719 & 9.41880406505495 \\ 
+Callaway-Sant'Anna & 0.0379047149227732 & 0.076310250972043 & 0.21366870272172 & 23.82123704459 & -0.111663376982431 & 0.187472806827977 & -10.5654735963821 & 20.619744864029 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+============================================================
+ROBUSTEZ AVANÇADA V5 CONCLUÍDA
+============================================================
+# A tibble: 7 × 2
+  Bloco                  Status                               
+  <chr>                  <chr>                                
+1 BJS                    OK                                   
+2 Wild cluster bootstrap não estimado                         
+3 CR2                    OK                                   
+4 Timing A/B/C/D         OK                                   
+5 Leave-one-TJ-out       OK                                   
+6 MDE/poder              OK                                   
+7 Sun-Abraham            sunab não exportado por fixest 0.14.2
+
+Confira outputs/audit/STATUS_ROBUSTEZ_V5.csv
+============================================================
+indexing painel_anpec_v5.csv [========================================] 2.15GB/s, eta:  0s                                                                                          
+============================================================
+V5.2.1 - WILD CLUSTER BOOTSTRAP
+============================================================
+N = 324 
+Clusters = 27 
+
+Rodando 9.999 replicações...
+wrote 2.15GB in  0s, 2.15GB/s                                                                                        indexing inferencia_poucos_clusters_v5.csv [=========================] 31.95MB/s, eta:  0s                                                                                          indexing cr2_satterthwaite_v5.csv [==================================] 17.33MB/s, eta:  0s                                                                                          wrote 2.15GB in  0s, 2.15GB/s                                                                                        
+RESULTADO WILD:
+# A tibble: 1 × 8
+  Metodo                 Estimativa Estatistica p_valor IC_inf IC_sup Replicacoes Clusters
+  <chr>                       <dbl>       <dbl>   <dbl>  <dbl>  <dbl>       <int>    <int>
+1 Wild cluster bootstrap     0.0161       0.409   0.668     NA     NA        9999       27
+
+COMPARAÇÃO FINAL:
+# A tibble: 3 × 6
+  Metodo                 Estimativa      EP p_valor  IC_inf  IC_sup
+  <chr>                       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+1 CR1 cluster TJ             0.0161  0.0377   0.672 -0.0578  0.0900
+2 CR2 Satterthwaite          0.0161  0.0382   0.678 -0.0638  0.0960
+3 Wild cluster bootstrap     0.0161 NA        0.668 NA      NA     
+
+============================================================
+WILD BOOTSTRAP V5.2.1 CONCLUÍDO
+============================================================
+Envie somente:
+1. outputs/audit/wild_cluster_v5_2_1.csv
+2. outputs/audit/inferencia_poucos_clusters_v5_2_1.csv
+============================================================

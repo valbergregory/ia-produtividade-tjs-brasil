@@ -1,0 +1,13 @@
+boottest.lm(object = lm_pref, param = "ai_any_lag1", B = 9999, 
+    clustid = "tribunal", conf_int = TRUE, type = "rademacher", 
+    engine = "R-lean")
+	
+ Hypothesis: 1*ai_any_lag1 = 0
+ Observations: 324
+  Bootstr. Type: rademacher
+ Clustering: 1-way
+ Confidence Sets: 95%
+ Number of Clusters: 27
+ 
+               term estimate statistic p.value conf.low conf.high
+1 1*ai_any_lag1 = 0    0.016     0.409   0.668       NA        NA
